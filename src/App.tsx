@@ -6,17 +6,12 @@ function App() {
   const handle = useFullScreenHandle();
   return (
     <>
-      <button onClick={handle.enter} style={{ position: 'absolute' }}>
-        Enter
-      </button>
       <FullScreen handle={handle}>
+        <div className='overlay'>
+          <button onClick={handle.enter}>Enter</button>
+          <button onClick={handle.exit}>Exit</button>
+        </div>
         <div style={{ overflow: 'hidden' }}>
-          <button
-            onClick={handle.exit}
-            style={{ position: 'absolute', top: 500, left: 500 }}
-          >
-            Exit
-          </button>
           <ReactPlayer
             url={'https://www.youtube.com/watch?v=u9vK5utTcxE=1'}
             playing
