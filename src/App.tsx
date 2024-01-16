@@ -5,6 +5,8 @@ import { useState } from 'react';
 
 function App() {
   const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(false);
+
   const handle = useFullScreenHandle();
   return (
     <>
@@ -15,13 +17,14 @@ function App() {
             <button onClick={handle.enter}>Enter</button>
             <button onClick={handle.exit}>Exit</button>
             <button onClick={() => setPlaying((prev) => !prev)}>Play</button>
+            <button onClick={() => setMuted((prev) => !prev)}>Mute</button>
           </div>
         </div>
         <div style={{ overflow: 'hidden' }}>
           <ReactPlayer
-            url={'https://www.youtube.com/watch?v=UV0mhY2Dxr0'}
+            url={'https://www.youtube.com/watch?v=FslCeCp1GqM'}
             playing={playing}
-            muted={false}
+            muted={muted}
             controls={false} // set to false
             width={'100vw'}
             height={'100vh'}
