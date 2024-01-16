@@ -22,7 +22,7 @@ function App() {
             url={'https://www.youtube.com/watch?v=UV0mhY2Dxr0'}
             playing={playing}
             muted={false}
-            controls={true} // set to false
+            controls={false} // set to false
             width={'100vw'}
             height={'100vh'}
             config={{
@@ -31,7 +31,7 @@ function App() {
                 iv_load_policy: 3,
               },
             }}
-            // style={{ pointerEvents: 'none' }}
+            style={{ pointerEvents: 'none' }}
           />
         </div>
       </FullScreen>
