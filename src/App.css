@@ -4,6 +4,14 @@
   text-align: center;
 }
 
+.time {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 9em;
+  margin-top: 100px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

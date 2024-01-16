@@ -1,25 +1,37 @@
 import ReactPlayer from 'react-player/youtube';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [playing, setPlaying] = useState(false);
   const handle = useFullScreenHandle();
   return (
     <>
       <FullScreen handle={handle}>
         <div className='overlay'>
-          <button onClick={handle.enter}>Enter</button>
-          <button onClick={handle.exit}>Exit</button>
+          <div className='time'>21:45</div>
+          <div style={{ position: 'absolute' }}>
+            <button onClick={handle.enter}>Enter</button>
+            <button onClick={handle.exit}>Exit</button>
+            <button onClick={() => setPlaying((prev) => !prev)}>Play</button>
+          </div>
         </div>
         <div style={{ overflow: 'hidden' }}>
           <ReactPlayer
-            url={'https://www.youtube.com/watch?v=u9vK5utTcxE=1'}
-            playing
-            muted
-            controls
+            url={'https://www.youtube.com/watch?v=UV0mhY2Dxr0'}
+            playing={playing}
+            muted={false}
+            controls={true} // set to false
             width={'100vw'}
             height={'100vh'}
-            style={{ pointerEvents: 'none' }}
+            config={{
+              playerVars: {
+                disablekb: 1,
+                iv_load_policy: 3,
+              },
+            }}
+            // style={{ pointerEvents: 'none' }}
           />
         </div>
       </FullScreen>
